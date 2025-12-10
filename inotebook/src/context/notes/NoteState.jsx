@@ -28,7 +28,7 @@ const NoteState = (props)=>{
     "__v": 0
   },
     {
-    "_id": "6921a6822f819714251f2e38",
+    "_id": "6921a6820f819712251f2e38s",
     "user": "6915b04826a5c49f0d7879d2",
     "title": "New Note",
     "description": "Please access the playlist",
@@ -36,7 +36,7 @@ const NoteState = (props)=>{
     "__v": 0
   },
   {
-    "_id": "6921a6932f819714251f2e3c",
+    "_id": "6921a6935f819714251f2e3cf",
     "user": "6915b04826a5c49f0d7879d2",
     "title": "New Note 3",
     "description": "Please access the playlist",

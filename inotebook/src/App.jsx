@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Routes,Route} from "react-router-dom"
 import Home from './components/Home'
 import About from './components/About'
 import NoteState from './context/notes/NoteState'
+import Alert from './components/Alert'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
       {/* it will provide the data to the compoent coming inside it */}
       <Router>
          <NavBar/>
+         <Alert message = "This is amzing REact Course"/>
          <div className='container'>
           <Routes>
       <Route path="/" element={<Home/>}/>
