@@ -18,7 +18,7 @@ function App() {
       {/* it will provide the data to the compoent coming inside it */}
       <Router>
          <NavBar/>
-         <Alert message = "This is amzing REact Course"/>
+         <Alert message = "This is amazing React Course"/>
          <div className='container'>
           <Routes>
       <Route path="/" element={<Home/>}/>
