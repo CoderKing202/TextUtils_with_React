@@ -79,10 +79,12 @@ router.delete(
  try{
 
    // Find the note to be deleted and delete it
+   console.log(req.params.id)
    let note = await Note.findById(req.params.id)
    if(!note){
    return res.status(404).send("Not Found")
   }
+  console.log(note)
   //Allow deletion only if user owns this Note 
   if(note.user.toString() !== req.user.id)
   {
