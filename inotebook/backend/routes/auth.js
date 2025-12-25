@@ -18,11 +18,12 @@ router.post(
     }),
   ],
   async (req, res) => {
+    let  success = false;
     // if there are errors return bad request and the errors
     const result = validationResult(req);
 
     if (!result.isEmpty()) {
-      return res.status(400).json({ errors: result.array() });
+      return res.status(400).json({ success,errors: result.array() });
     }
     //Check whether the user with this email exists already
     try {
@@ -30,7 +31,7 @@ router.post(
       if (user) {
         return res
           .status(400)
-          .json({ error: "Sorry a user with this email already exists" });
+          .json({ success,error: "Sorry a user with this email already exists" });
       }
       const salt = await bcrypt.genSalt(10);
       const secPass = await bcrypt.hash(req.body.password, salt);
@@ -49,7 +50,8 @@ router.post(
       // feed the data to the token making(who knows)
       const authtoken = jwt.sign(data, JWT_SECRET); //It is a synch method
       console.log(authtoken);
-      res.json({ authtoken });
+      success = true
+      res.json({ success,authtoken });
     } catch (error) {
       //catch errors
       console.error(error.message);
