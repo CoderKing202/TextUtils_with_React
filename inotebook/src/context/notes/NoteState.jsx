@@ -13,7 +13,7 @@ const NoteState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjkxNWIwNDgyNmE1YzQ5ZjBkNzg3OWQyIn0sImlhdCI6MTc2MzQ2MDEzNX0.FkBtcJP3npJ_Nu4tfmSbdSQL2oXDrG5YqBWfdkmDB7o"
+        "auth-token":localStorage.getItem('token')
       },
     });
     const json = await res.json()
@@ -28,7 +28,7 @@ const NoteState = (props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjkxNWIwNDgyNmE1YzQ5ZjBkNzg3OWQyIn0sImlhdCI6MTc2MzQ2MDEzNX0.FkBtcJP3npJ_Nu4tfmSbdSQL2oXDrG5YqBWfdkmDB7o"
+        "auth-token":localStorage.getItem('token')
       },
       body: JSON.stringify({title,description,tag}),
     });
@@ -42,10 +42,10 @@ const NoteState = (props) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjkxNWIwNDgyNmE1YzQ5ZjBkNzg3OWQyIn0sImlhdCI6MTc2MzQ2MDEzNX0.FkBtcJP3npJ_Nu4tfmSbdSQL2oXDrG5YqBWfdkmDB7o"
+        "auth-token":localStorage.getItem('token')
       },
     });
-    const json = await res.json()
+    // const json = await res.json()
  
     setNotes();
     const newNotes = notes.filter((note) => {
@@ -61,12 +61,12 @@ const NoteState = (props) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjkxNWIwNDgyNmE1YzQ5ZjBkNzg3OWQyIn0sImlhdCI6MTc2MzQ2MDEzNX0.FkBtcJP3npJ_Nu4tfmSbdSQL2oXDrG5YqBWfdkmDB7o"
+        "auth-token":localStorage.getItem('token')
       },
       body: JSON.stringify({title,description,tag}),
     });
 
-    const json =await  res.json();
+    // const json =await res.json();
     let newNotes = JSON.parse(JSON.stringify(notes))
     // Logic to edit in client
     for (let index = 0; index < notes.length; index++) {
