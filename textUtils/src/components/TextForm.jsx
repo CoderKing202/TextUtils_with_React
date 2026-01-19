@@ -53,7 +53,7 @@ style={{backgroundColor:props.mode==="light"?"white":"#13466e", color:props.mode
   </div>
   <div className="container my-3" style={{color:props.mode==="light"?"#042743":"white"}}>
     <h2>Your text summary</h2>
-    <p>{ text.split(" ").filter((element)=>{return element.length!==0 }).length } words, {text.length} characters</p>
+    <p>{ text.split(/\s+/).filter((element)=>{return element.length!==0 }).length } words, {text.length} characters</p>
     <p>{ 0.008 * text.split(" ").filter((element)=>{return element.length!==0 }).length } Minutes read</p>
     <h2>Preview</h2>
     <p>{text.length === 0?"Nothing to Preview":text }</p>
